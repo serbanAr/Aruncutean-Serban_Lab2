@@ -1,4 +1,7 @@
-﻿namespace Aruncutean_Serban_Lab2.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.Xml.Linq;
+
+namespace Aruncutean_Serban_Lab2.Models
 {
     public class Author
     {
