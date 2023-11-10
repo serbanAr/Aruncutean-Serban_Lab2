@@ -20,6 +20,7 @@ namespace Aruncutean_Serban_Lab2.Models
         public DateTime PublishingDate { get; set; }
         public int? PublisherID { get; set; }
         public Publisher? Publisher { get; set; }
+        [ForeignKey("Author")]
         public int? AuthorID { get; set; }
         public Author? Author { get; set; }
         public ICollection<BookCategory>? BookCategories { get; set; }
