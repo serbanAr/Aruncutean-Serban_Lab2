@@ -30,8 +30,6 @@ namespace Aruncutean_Serban_Lab2.Pages.Authors
             AuthorData = new AuthorIndexData();
             AuthorData.Authors = await _context.Authors
             .Include(i => i.Books)
-            .ThenInclude(c => c.Author)
-            .OrderBy(i => i.FullName)
             .ToListAsync();
             if (id != null)
             {
