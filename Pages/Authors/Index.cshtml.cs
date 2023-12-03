@@ -20,23 +20,13 @@ namespace Aruncutean_Serban_Lab2.Pages.Authors
             _context = context;
         }
 
-        public IList<Author> Author { get;set; } = default!;
+        public IList<Author> Author { get; set; } = default!;
 
-        public AuthorIndexData AuthorData { get; set; }
-        public int AuthorID { get; set; }
-        public int BookID { get; set; }
-        public async Task OnGetAsync(int? id, int? bookID)
+        public async Task OnGetAsync()
         {
-            AuthorData = new AuthorIndexData();
-            AuthorData.Authors = await _context.Authors
-            .Include(i => i.Books)
-            .ToListAsync();
-            if (id != null)
+            if (_context.Authors != null)
             {
-                AuthorID = id.Value;
-                Author author = AuthorData.Authors
-                .Where(i => i.ID == id.Value).Single();
-                AuthorData.Books = author.Books;
+                Author = await _context.Authors.ToListAsync();
             }
         }
     }
