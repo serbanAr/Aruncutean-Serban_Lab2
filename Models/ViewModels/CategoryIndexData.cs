@@ -1,8 +1,8 @@
 ﻿namespace Aruncutean_Serban_Lab2.Models.ViewModels
 {
-    public class AuthorIndexData
+    public class CategoryIndexData
     {
-        public IEnumerable<Author> Authors { get; set; }
+        public IEnumerable<Category> Categories { get; set; }
         public IEnumerable<Book> Books { get; set; }
     }
 }

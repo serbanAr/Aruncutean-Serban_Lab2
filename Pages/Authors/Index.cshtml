@@ -1,4 +1,4 @@
-﻿@page "{id:int?}"
+﻿@page
 @model Aruncutean_Serban_Lab2.Pages.Authors.IndexModel
 
 @{
@@ -23,14 +23,8 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.AuthorData.Authors)
-        {
-            string selectedRow = "";
-            if (item.ID == Model.AuthorID)
-            {
-                selectedRow = "table-success";
-            }
-            <tr class="@selectedRow">
+@foreach (var item in Model.Author) {
+        <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.FirstName)
             </td>
@@ -38,7 +32,6 @@
                 @Html.DisplayFor(modelItem => item.Lastname)
             </td>
             <td>
-                <a asp-page="./Index" asp-route-id="@item.ID">Select</a> |
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
